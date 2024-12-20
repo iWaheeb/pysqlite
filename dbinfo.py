@@ -22,7 +22,7 @@ def read_database_information(path: str) -> dict[str, any]:
         "user_version": int.from_bytes(file.read(4)),
         "incremental_vacuum": int.from_bytes(file.read(4)),
         "application_id": int.from_bytes(file.read(4)),
-        "reserved_for_expansion": int.from_bytes(file.read(4)),
+        "reserved_for_expansion": int.from_bytes(file.read(20)),
         "version_valid_for": int.from_bytes(file.read(4)),
         "sqlite_version_number": int.from_bytes(file.read(4))
     }
